@@ -26,7 +26,7 @@
             <Fluent:Ribbon.QuickAccessItems>
 
                 <Fluent:QuickAccessMenuItem IsChecked="True">
-                    <Fluent:Button Header="新建" Icon="Images\NewFile16.png" Click="btnOpNew_Click"/>
+                    <Fluent:Button Header="新建" Icon="Images\newdocument32.png" Click="btnOpNew_Click"/>
                 </Fluent:QuickAccessMenuItem>
                 <Fluent:QuickAccessMenuItem IsChecked="True">
                     <Fluent:Button Header="保存" Icon="Images\Save.png" Click="btnSaveDoc_Click"/>

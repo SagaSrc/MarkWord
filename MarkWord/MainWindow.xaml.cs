@@ -647,6 +647,7 @@ namespace MarkWord
         private void btnOpNew_Click(object sender, RoutedEventArgs e)
         {
             NewDoc();
+            btnEdit_Click(sender,e);
         }
 
 
@@ -737,6 +738,7 @@ namespace MarkWord
 
             markEdit.textEditor.Clear();
             markDoc.LoadAllHTML(markEdit.textEditor.Text);
+             
             Config.CurrBlogsDocument = new BlogsDocumentInfo();
         }
 
@@ -786,7 +788,7 @@ namespace MarkWord
 
             var text = System.IO.File.ReadAllText(filePath);
             markEdit.LoadText(text);
-            ChangeTitle();
+            ChangeTitle(filePath);
             markDoc.LoadAllHTML(markEdit.textEditor.Text);
             Config.Common.FileList.Remove(filePath);
             Config.Common.FileList.Insert(0, filePath);
@@ -834,6 +836,14 @@ namespace MarkWord
         private void ChangeTitle()
         {
             this.Title = string.Format("{0}  -  {1}", BLL.FileManager.SavePath, Config.Title);
+        }
+
+        /// <summary>
+        /// 标题更变
+        /// </summary>
+        private void ChangeTitle(string strFile)
+        {
+            this.Title = string.Format("{0}  -  {1}", strFile, Config.Title);
         }
 
 
