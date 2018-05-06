@@ -316,6 +316,8 @@
     <Resource Include="Images\wordtemplate32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\loadImg.png" />
+    <Resource Include="Images\NewFile16.png" />
     <Content Include="Resources\DefaultStyle.css" />
     <Resource Include="Resources\test.txt" />
     <Content Include="Source\style\DefaultStyle.css">

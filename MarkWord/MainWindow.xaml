@@ -24,6 +24,10 @@
         </Grid.RowDefinitions>
         <Fluent:Ribbon Grid.Row="0" Name="ribbonToolbar"  >
             <Fluent:Ribbon.QuickAccessItems>
+
+                <Fluent:QuickAccessMenuItem IsChecked="True">
+                    <Fluent:Button Header="新建" Icon="Images\NewFile16.png" Click="btnOpNew_Click"/>
+                </Fluent:QuickAccessMenuItem>
                 <Fluent:QuickAccessMenuItem IsChecked="True">
                     <Fluent:Button Header="保存" Icon="Images\Save.png" Click="btnSaveDoc_Click"/>
                 </Fluent:QuickAccessMenuItem>
@@ -33,6 +37,7 @@
                 <Fluent:QuickAccessMenuItem  IsChecked="True">
                     <Fluent:Button Header="恢复" Icon="Images\redo16.png" Click="btnRedo_Click"/>
                 </Fluent:QuickAccessMenuItem>
+                
             </Fluent:Ribbon.QuickAccessItems>
             <Fluent:Ribbon.Menu >
                 <Fluent:Backstage Name="ribBackStage">
