@@ -14,8 +14,8 @@ namespace MarkWord
         protected override void OnStartup(StartupEventArgs e)
         {
 
-            SplashScreen s = new SplashScreen("Images/loadImg.png");
-            s.Show(true, true);
+            //SplashScreen s = new SplashScreen("Images/loadImg.png");
+            //s.Show(true, true);
 
             BLL.FileManager.CheckMyDocFolder();//检查文件夹
             Config.ReadConfig();

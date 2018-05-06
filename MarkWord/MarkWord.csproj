@@ -13,6 +13,22 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -36,11 +52,19 @@
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DDAAE92CD6C96A49BC785F15B74DD94BC6216F37</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MarkWord_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BlogsAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BlogsAPI\bin\Release\BlogsAPI.dll</HintPath>
-    </Reference>
     <Reference Include="CommonMark, Version=0.1.0.0, Culture=neutral, PublicKeyToken=001ef8810438905d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\CommonMark.dll</HintPath>
@@ -194,6 +218,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="MarkWord_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,11 +226,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bin\Debug\Config\imges\imagefile.jpg" />
-    <Resource Include="bin\Release\Config\imges\imagefile.jpg" />
     <Resource Include="Images\Bold.png" />
     <Resource Include="Images\Copy.png" />
     <Resource Include="Images\Cut.png" />
@@ -296,6 +316,14 @@
     <Resource Include="Images\wordtemplate32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\DefaultStyle.css" />
+    <Resource Include="Resources\test.txt" />
+    <Content Include="Source\style\DefaultStyle.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Source\style\Style1.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\LineNumbers.png" />
     <Resource Include="Images\TextHighlightColor.png" />
     <Resource Include="Images\key_enter.png" />
@@ -334,14 +362,10 @@
     <Resource Include="Images\oficina_MD.png" />
     <Resource Include="Images\both.png" />
     <Resource Include="Images\full.png" />
-    <Content Include="bin\Debug\Config\markword.html" />
-    <Content Include="bin\Debug\Source\style\DefaultStyle.css" />
-    <Content Include="bin\Debug\Source\style\Style1.css" />
-    <Content Include="bin\Release\Config\markword.html" />
-    <Content Include="bin\Release\Source\style\DefaultStyle.css" />
-    <Content Include="bin\Release\Source\style\Style1.css" />
+    <Content Include="Config\markword.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="HTMLPage1.html" />
-    <SplashScreen Include="Images\loadImg.png" />
     <Resource Include="Images\icon.ico" />
     <Resource Include="Images\icon.png" />
     <Resource Include="Images\upload.png" />
@@ -355,7 +379,19 @@
     <Resource Include="Images\filetype_pdf.png" />
     <Resource Include="Images\BlueTheme.png" />
     <Resource Include="icon.ico" />
-    <Content Include="Resources\DefaultStyle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogsAPI\BlogsAPI.csproj">
+      <Project>{9ab23167-97ae-4fed-9698-597f14124e54}</Project>
+      <Name>BlogsAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

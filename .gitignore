@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/MarkWord/bin
+/MarkWord/bin
+/MarkWord/bin
