@@ -46,7 +46,12 @@ namespace MarkWord
             if (Common.CommandLineArgs.Count<string>() > 0)
             {
                 if (System.IO.File.Exists(Common.CommandLineArgs[0]))
+                {
                     OpenDoc(Common.CommandLineArgs[0]);
+                    btnDisplay_Click(sender, e);
+                }
+                   
+
             }
         }
 
