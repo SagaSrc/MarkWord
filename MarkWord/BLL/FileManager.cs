@@ -44,6 +44,25 @@ namespace MarkWord.BLL
             return null;
         }
 
+        /// <summary>
+        /// 打开Markdown文件
+        /// </summary>
+        /// <returns></returns>
+        public static string OpenMarkdownFile(string strFileName)
+        {
+             
+            try
+            { 
+                return File.ReadAllText(strFileName, Tools.GetFileType(strFileName));
+                
+            }
+            catch (Exception ex)
+            {
+                Common.ShowMessage(ex.Message);
+                return null;
+            }
+             
+        }
 
         public static string SavePath { get; private set; }
         public static bool isChangeFlag { get; set; }//是否更变

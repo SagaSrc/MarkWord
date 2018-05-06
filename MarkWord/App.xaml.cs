@@ -22,6 +22,9 @@ namespace MarkWord
             Config.ReadBlogsConfig();
 
 
+            //save commandline   MessageBox.Show(e.Args[0].ToString());
+            Common.CommandLineArgs = e.Args;
+
             Application.Current.Resources.BeginInit();
             switch (Config.Common.Theme)
             {

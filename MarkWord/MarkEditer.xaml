@@ -13,7 +13,7 @@
             VerticalScrollBarVisibility="Auto" 
             Grid.Row="1" 
             Name="scrViewer" ScrollChanged="scrViewer_ScrollChanged">
-        <Border Name="border" BorderThickness="1" BorderBrush="LightGray" MaxWidth="900" Margin="15">
+        <Border Name="border" BorderThickness="1" BorderBrush="LightGray" MaxWidth="1900" Margin="15">
             <Grid Name="docFrame">
                 <avalonEdit:TextEditor
 				          Name="textEditor"

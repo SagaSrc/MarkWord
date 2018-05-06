@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:MarkWord"
         mc:Ignorable="d"
         Icon="Images\icon.png"
-        Title="MarkWord" Height="660" Width="1100" WindowState="Maximized" PreviewKeyUp="RibbonWindow_PreviewKeyUp" Closing="RibbonWindow_Closing">
+        Title="MarkWord" Height="660" Width="1100" WindowState="Maximized" Loaded="MainWindow_Loaded" PreviewKeyUp="RibbonWindow_PreviewKeyUp" Closing="RibbonWindow_Closing">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

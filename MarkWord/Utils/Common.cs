@@ -63,6 +63,8 @@ namespace MarkWord
         }
         public static TextBlock labStatus { get; set; }
 
+        public static string[] CommandLineArgs { get; set; }
+
         public static void ShowStatusMessage(string msg)
         {
             labStatus.Text = msg;

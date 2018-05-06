@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace MarkWord
@@ -57,7 +58,7 @@ namespace MarkWord
         {
             get
             {
-                return Environment.CurrentDirectory + "\\Source\\Style";
+                return GetAppPath() + "\\Source\\Style";
             }
         }
         /// <summary>
@@ -67,7 +68,7 @@ namespace MarkWord
         {
             get
             {
-                return Environment.CurrentDirectory + "\\Source\\Script";
+                return GetAppPath() + "\\Source\\Script";
             }
         }
 
@@ -78,7 +79,7 @@ namespace MarkWord
         {
             get
             {
-                return Environment.CurrentDirectory + "\\Config\\MainSetting.xml";
+                return GetAppPath() + "\\Config\\MainSetting.xml";
             }
         }
 
@@ -86,8 +87,8 @@ namespace MarkWord
         public static string MarkdownHelp
         {
             get
-            {
-                return Environment.CurrentDirectory + "\\Config\\markword.html";
+            {   //Environment.CurrentDirectory
+                return GetAppPath() + "\\Config\\markword.html";
             }
         }
 
@@ -100,7 +101,7 @@ namespace MarkWord
         {
             get
             {
-                return MyDocumentFolder + "\\setting.bin";
+                return GetAppPath() + "\\setting.bin";
             }
         }
 
@@ -174,6 +175,19 @@ namespace MarkWord
             Tools.WriteByBinary<BlogsInfo>(Config.Blogs, Config.BlogsConfigFile);
         }
 
+
+        //--------------------------------------------
+        // Application Execute  directory
+        //--------------------------------------------
+        public static string GetAppPath()
+        {
+            // Get "X:\xxx\xxx\xxx.exe (.exe文件所在的目录+.exe文件名)" path.
+            string currentAppsPath = Assembly.GetExecutingAssembly().Location;
+            string DirPath = currentAppsPath = currentAppsPath.Substring(0, currentAppsPath.LastIndexOf('\\'));//删除文件名
+
+            return (DirPath);
+
+        }
 
     }
 }

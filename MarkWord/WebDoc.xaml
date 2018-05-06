@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MarkWord"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border BorderThickness="1" BorderBrush="LightGray" MaxWidth="900" Margin="15">
+    <Border BorderThickness="1" BorderBrush="LightGray" MaxWidth="1900" Margin="15">
         <Grid Name="docFrame">
             <WindowsFormsHost  Name="docViewer" AllowDrop="False" Margin="0" ></WindowsFormsHost>
         </Grid>

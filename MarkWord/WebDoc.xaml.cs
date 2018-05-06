@@ -44,7 +44,7 @@ namespace MarkWord
             winWebDoc.NewWindow += WinWebDoc_NewWindow;
             winWebDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             docViewer.Child = winWebDoc;
-
+           
 
             //winWebDoc = new Awesomium.Windows.Forms.WebControl();
             //winWebDoc.Dock = System.Windows.Forms.DockStyle.Fill;

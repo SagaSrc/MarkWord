@@ -37,6 +37,17 @@ namespace MarkWord
 
             Common.labStatus = this.LabStatus;
             IniteWorkArea();
+            
+
+        }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Common.CommandLineArgs.Count<string>() > 0)
+            {
+                if (System.IO.File.Exists(Common.CommandLineArgs[0]))
+                    OpenDoc(Common.CommandLineArgs[0]);
+            }
         }
 
         public double[] FontSizeList
